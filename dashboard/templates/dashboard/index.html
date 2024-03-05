@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block scripts %}
+{% endblock scripts %}
+
+{% block content %}
+<h1>Hello index page</h1>
+
+{% if qs %}
+    <ul>
+        {% for el in qs %}
+        <li><a href="{{el.get_absolute_url}}">{{el.name}}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock content %}
